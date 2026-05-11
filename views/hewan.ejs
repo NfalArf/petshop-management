@@ -1,0 +1,178 @@
+<%- include('partials/header', { title: 'Daftar Hewan' }) %>
+
+<div class="bg-white rounded-3xl shadow-xl p-8 border border-gray-100">
+
+  <div class="flex flex-col md:flex-row md:justify-between md:items-center gap-4 mb-8">
+
+    <div>
+      <h1 class="text-4xl font-bold text-gray-800">
+        Daftar Hewan
+      </h1>
+
+      <p class="text-gray-500 mt-2">
+        Kelola data hewan petshop dengan mudah.
+      </p>
+    </div>
+
+    <a href="/hewan/add"
+      class="bg-blue-600 text-white px-6 py-4 rounded-2xl shadow-lg hover:bg-blue-700 hover:scale-105 transition duration-300 text-center">
+      + Tambah Hewan
+    </a>
+
+  </div>
+
+  <div class="overflow-x-auto rounded-2xl border border-gray-100">
+
+    <table class="w-full overflow-hidden">
+
+      <thead>
+        <tr class="bg-gray-50 text-gray-600 uppercase text-sm tracking-wide">
+          <th class="p-5 text-left">Jenis Hewan</th>
+          <th class="p-5 text-left">Spesies</th>
+          <th class="p-5 text-left">Jumlah</th>
+          <th class="p-5 text-left">Status</th>
+          <th class="p-5 text-center">Aksi</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+  <% hewan.forEach(function(h) { %>
+
+    <tr class="border-t hover:bg-blue-50 transition duration-300">
+
+      <!-- JENIS HEWAN -->
+      <td class="p-5 font-semibold text-gray-800">
+        <%= h.jenis_hewan %>
+      </td>
+
+      <!-- SPESIES -->
+      <td class="p-5 text-gray-600">
+        <%= h.spesies %>
+      </td>
+
+      <!-- JUMLAH -->
+      <td class="p-5 text-gray-700 font-medium">
+        <%= h.jumlah %>
+      </td>
+
+      <!-- STATUS -->
+      <td class="p-5">
+
+        <% if(h.jumlah > 5) { %>
+
+          <span class="bg-green-100 text-green-600 px-4 py-2 rounded-full text-sm font-medium">
+            Tersedia
+          </span>
+
+        <% } else if(h.jumlah > 0) { %>
+
+          <span class="bg-yellow-100 text-yellow-700 px-4 py-2 rounded-full text-sm font-medium">
+            Hampir Habis
+          </span>
+
+        <% } else { %>
+
+          <span class="bg-red-100 text-red-600 px-4 py-2 rounded-full text-sm font-medium">
+            Kosong
+          </span>
+
+        <% } %>
+
+      </td>
+
+      <!-- AKSI -->
+      <td class="p-5">
+
+        <div class="flex items-center justify-center gap-3">
+
+          <!-- DETAIL -->
+          <a
+            href="/hewan/<%= h.id %>"
+            class="
+              px-4 py-2
+              rounded-xl
+              bg-blue-100
+              text-blue-600
+              text-sm
+              font-semibold
+              transition-all duration-300
+              hover:bg-blue-600
+              hover:text-white
+              hover:shadow-lg
+              hover:-translate-y-1
+              active:scale-95
+            ">
+
+            Detail
+
+          </a>
+
+          <!-- EDIT -->
+          <a
+            href="/hewan/edit/<%= h.id %>"
+            class="
+              px-4 py-2
+              rounded-xl
+              bg-yellow-100
+              text-yellow-700
+              text-sm
+              font-semibold
+              transition-all duration-300
+              hover:bg-yellow-500
+              hover:text-white
+              hover:shadow-lg
+              hover:-translate-y-1
+              active:scale-95
+            ">
+
+            Edit
+
+          </a>
+
+          <!-- DELETE -->
+          <form
+            action="/hewan/delete/<%= h.id %>"
+            method="POST"
+            onsubmit="return confirm('Yakin ingin menghapus data ini?')">
+
+            <button
+              type="submit"
+              class="
+                px-4 py-2
+                rounded-xl
+                bg-red-100
+                text-red-600
+                text-sm
+                font-semibold
+                transition-all duration-300
+                hover:bg-red-600
+                hover:text-white
+                hover:shadow-lg
+                hover:-translate-y-1
+                active:scale-95
+              ">
+
+              Delete
+
+            </button>
+
+          </form>
+
+        </div>
+
+      </td>
+
+    </tr>
+
+  <% }) %>
+
+</tbody>
+
+    </table>
+
+  </div>
+
+</div>
+
+<%- include('partials/footer') %>

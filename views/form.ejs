@@ -1,0 +1,69 @@
+<%- include('partials/header', { title: 'Tambah Hewan' }) %>
+
+<div class="max-w-2xl mx-auto bg-white rounded-3xl shadow-xl p-10 border border-gray-100">
+
+  <div class="mb-8">
+    <h1 class="text-4xl font-bold text-gray-800">
+      Tambah Hewan
+    </h1>
+
+    <p class="text-gray-500 mt-2">
+      Tambahkan data hewan baru ke sistem.
+    </p>
+  </div>
+
+  <<form action="/hewan" method="POST" class="space-y-6">
+
+    <div>
+      <label class="block text-gray-700 font-medium mb-2">
+        Jenis Hewan
+      </label>
+
+      <input
+        type="text"
+        name="jenis_hewan"
+        class="w-full border border-gray-200 rounded-2xl px-5 py-4 focus:outline-none focus:ring-4 focus:ring-blue-100 focus:border-blue-500 transition"
+        placeholder="Contoh: Kucing"
+        required
+      >
+    </div>
+
+    <div>
+      <label class="block text-gray-700 font-medium mb-2">
+        Spesies
+      </label>
+
+      <input
+        type="text"
+        name="spesies"
+        class="w-full border border-gray-200 rounded-2xl px-5 py-4 focus:outline-none focus:ring-4 focus:ring-blue-100 focus:border-blue-500 transition"
+        placeholder="Contoh: Persia"
+        required
+      >
+    </div>
+
+    <div>
+      <label class="block text-gray-700 font-medium mb-2">
+        Jumlah
+      </label>
+
+      <input
+        type="number"
+        name="jumlah"
+        class="w-full border border-gray-200 rounded-2xl px-5 py-4 focus:outline-none focus:ring-4 focus:ring-blue-100 focus:border-blue-500 transition"
+        placeholder="Masukkan jumlah"
+        required
+      >
+    </div>
+
+    <button
+      type="submit"
+      class="w-full bg-blue-600 text-white py-4 rounded-2xl font-semibold shadow-lg hover:bg-blue-700 hover:scale-[1.02] transition duration-300">
+      Simpan Data
+    </button>
+
+  </form>
+
+</div>
+
+<%- include('partials/footer') %>

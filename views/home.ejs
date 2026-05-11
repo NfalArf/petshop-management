@@ -1,0 +1,88 @@
+<%- include('partials/header', { title: 'Home' }) %>
+
+<section class="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-3xl p-12 text-white shadow-2xl overflow-hidden relative">
+
+  <div class="absolute right-0 top-0 opacity-10 text-[200px]">
+    🐶
+  </div>
+
+  <div class="relative z-10 max-w-3xl">
+
+    <p class="uppercase tracking-[6px] text-blue-100 text-sm mb-4">
+      Petshop Management System
+    </p>
+
+    <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-6">
+      Kelola Data Hewan
+      <span class="block text-blue-200">
+        Dengan Mudah
+      </span>
+    </h1>
+
+    <p class="text-lg text-blue-100 leading-relaxed mb-8">
+      Sistem modern untuk mengelola daftar hewan,
+      stok, dan informasi petshop secara cepat,
+      rapi, dan efisien.
+    </p>
+
+    <div class="flex flex-wrap gap-4">
+
+      <a href="/hewan"
+        class="bg-white text-blue-600 px-7 py-4 rounded-2xl font-semibold shadow-lg hover:scale-105 transition duration-300">
+        Lihat Data Hewan
+      </a>
+
+      <a href="/hewan/add"
+  class="group relative overflow-hidden border border-white/50 px-7 py-4 rounded-2xl transition-all duration-300 hover:bg-white hover:text-blue-600 hover:scale-105 hover:shadow-2xl">
+
+  <span class="relative z-10 flex items-center gap-2">
+    Tambah Hewan
+
+    <span class="transition-transform duration-300 group-hover:translate-x-1">
+      →
+    </span>
+  </span>
+
+</a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
+
+  <div class="bg-white rounded-3xl shadow-lg p-8 hover:-translate-y-1 transition duration-300">
+    <p class="text-gray-500 mb-2">
+      Total Data Hewan
+    </p>
+
+    <h2 class="text-5xl font-bold text-blue-600">
+      24
+    </h2>
+  </div>
+
+  <div class="bg-white rounded-3xl shadow-lg p-8 hover:-translate-y-1 transition duration-300">
+    <p class="text-gray-500 mb-2">
+      Database
+    </p>
+
+    <h2 class="text-3xl font-bold text-indigo-600">
+      MySQL
+    </h2>
+  </div>
+
+  <div class="bg-white rounded-3xl shadow-lg p-8 hover:-translate-y-1 transition duration-300">
+    <p class="text-gray-500 mb-2">
+      Status Sistem
+    </p>
+
+    <h2 class="text-3xl font-bold text-green-500">
+      Online
+    </h2>
+  </div>
+
+</section>
+
+<%- include('partials/footer') %>

@@ -1,0 +1,92 @@
+<%- include('partials/header', { title: 'Edit Hewan' }) %>
+
+<div class="max-w-3xl mx-auto bg-white rounded-3xl shadow-xl p-10 border border-gray-100">
+
+  <div class="mb-8">
+    <h1 class="text-4xl font-bold text-gray-800">
+      Edit Data Hewan
+    </h1>
+
+    <p class="text-gray-500 mt-2">
+      Update informasi hewan.
+    </p>
+  </div>
+
+  <form
+    action="/hewan/update/<%= hewan.id %>"
+    method="POST"
+    class="space-y-6">
+
+    <input
+      type="text"
+      name="jenis_hewan"
+      value="<%= hewan.jenis_hewan %>"
+      class="w-full border rounded-2xl px-5 py-4"
+    >
+
+    <input
+      type="text"
+      name="spesies"
+      value="<%= hewan.spesies %>"
+      class="w-full border rounded-2xl px-5 py-4"
+    >
+
+    <input
+      type="number"
+      name="jumlah"
+      value="<%= hewan.jumlah %>"
+      class="w-full border rounded-2xl px-5 py-4"
+    >
+
+    <textarea
+      name="deskripsi"
+      class="w-full border rounded-2xl px-5 py-4"><%= hewan.deskripsi %></textarea>
+
+    <input
+      type="number"
+      name="umur"
+      value="<%= hewan.umur %>"
+      class="w-full border rounded-2xl px-5 py-4"
+    >
+
+    <input
+      type="text"
+      name="kategori"
+      value="<%= hewan.kategori %>"
+      class="w-full border rounded-2xl px-5 py-4"
+    >
+
+    <input
+      type="text"
+      name="kesehatan"
+      value="<%= hewan.kesehatan %>"
+      class="w-full border rounded-2xl px-5 py-4"
+    >
+
+    <input
+      type="text"
+      name="makanan"
+      value="<%= hewan.makanan %>"
+      class="w-full border rounded-2xl px-5 py-4"
+    >
+
+    <input
+      type="text"
+      name="habitat"
+      value="<%= hewan.habitat %>"
+      class="w-full border rounded-2xl px-5 py-4"
+    >
+
+    <button
+      type="submit"
+      class="w-full bg-yellow-500 text-white py-4 rounded-2xl font-semibold hover:bg-yellow-600 transition">
+
+      Update Data
+
+    </button>
+
+  </form>
+
+</div>
+
+<%- include('partials/footer') %>

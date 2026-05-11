@@ -1,0 +1,147 @@
+<%- include('partials/header', { title: 'Detail Hewan' }) %>
+
+<div class="max-w-6xl mx-auto bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100">
+
+  <!-- HEADER -->
+  <div class="bg-gradient-to-r from-blue-600 to-indigo-600 p-10 text-white">
+
+    <p class="uppercase tracking-[5px] text-blue-100 text-sm mb-3">
+      Detail Hewan
+    </p>
+
+    <h1 class="text-5xl font-bold">
+      <%= hewan.jenis_hewan %>
+    </h1>
+
+    <p class="text-blue-100 text-lg mt-3">
+      <%= hewan.spesies %>
+    </p>
+
+  </div>
+
+  <!-- CONTENT -->
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 p-10">
+
+    <!-- GAMBAR -->
+    <div>
+
+      <img
+        src="<%= hewan.gambar %>"
+        alt="<%= hewan.jenis_hewan %>"
+        class="w-full h-[500px] object-cover rounded-3xl shadow-xl hover:scale-[1.02] transition duration-500"
+      >
+
+    </div>
+
+    <!-- INFORMASI -->
+    <div class="space-y-8">
+
+      <!-- CARD INFO -->
+      <div class="grid grid-cols-2 gap-4">
+
+        <div class="bg-blue-50 rounded-2xl p-5">
+          <p class="text-gray-500 text-sm mb-1">
+            Kategori
+          </p>
+
+          <h2 class="text-xl font-bold text-blue-700">
+            <%= hewan.kategori %>
+          </h2>
+        </div>
+
+        <div class="bg-indigo-50 rounded-2xl p-5">
+          <p class="text-gray-500 text-sm mb-1">
+            Umur
+          </p>
+
+          <h2 class="text-xl font-bold text-indigo-700">
+            <%= hewan.umur %> Tahun
+          </h2>
+        </div>
+
+        <div class="bg-green-50 rounded-2xl p-5">
+          <p class="text-gray-500 text-sm mb-1">
+            Status Kesehatan
+          </p>
+
+          <h2 class="text-xl font-bold text-green-600">
+            <%= hewan.kesehatan %>
+          </h2>
+        </div>
+
+        <div class="bg-yellow-50 rounded-2xl p-5">
+          <p class="text-gray-500 text-sm mb-1">
+            Habitat
+          </p>
+
+          <h2 class="text-xl font-bold text-yellow-700">
+            <%= hewan.habitat %>
+          </h2>
+        </div>
+
+      </div>
+
+      <!-- MAKANAN -->
+      <div>
+
+        <h3 class="text-2xl font-bold text-gray-800 mb-3">
+          Makanan Favorit
+        </h3>
+
+        <div class="bg-gray-50 rounded-2xl p-5 text-gray-700">
+          <%= hewan.makanan %>
+        </div>
+
+      </div>
+
+      <!-- DESKRIPSI -->
+      <div>
+
+        <h3 class="text-2xl font-bold text-gray-800 mb-3">
+          Deskripsi
+        </h3>
+
+        <div class="bg-gray-50 rounded-2xl p-5 text-gray-700 leading-relaxed">
+          <%= hewan.deskripsi %>
+        </div>
+
+      </div>
+
+      <!-- STATUS -->
+      <div>
+
+        <% if(hewan.jumlah > 0) { %>
+
+          <span class="bg-green-100 text-green-600 px-5 py-3 rounded-full font-medium">
+            Hewan Tersedia
+          </span>
+
+        <% } else { %>
+
+          <span class="bg-red-100 text-red-600 px-5 py-3 rounded-full font-medium">
+            Stok Kosong
+          </span>
+
+        <% } %>
+
+      </div>
+
+      <!-- BUTTON -->
+      <div>
+
+        <a href="/hewan"
+          class="inline-block bg-blue-600 text-white px-7 py-4 rounded-2xl shadow-lg hover:bg-blue-700 hover:scale-105 transition duration-300">
+
+          ← Kembali
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<%- include('partials/footer') %>
